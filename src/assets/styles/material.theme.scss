@@ -1,0 +1,15 @@
+@import "./material-variables.theme";
+@import "node_modules/@angular/material/theming";
+@import "./material-typography.theme";
+@import "./material/mat-sidenav";
+
+@include mat-core($typography);
+
+
+.full-width-dialog {
+  max-width: 95vw !important;
+}
+
+.full-height-dialog {
+  max-height: 95vw !important;
+}

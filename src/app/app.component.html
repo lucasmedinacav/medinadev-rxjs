@@ -1,1 +1,20 @@
-<app-sidenav></app-sidenav>
+<mat-toolbar color="primary">
+  <mat-toolbar-row>
+    <button type="button" aria-label="Toggle sidenav" mat-icon-button (click)="drawer.toggle()" color="secondary">
+      <mat-icon aria-label="Side nav toggle icon">menu</mat-icon>
+    </button>
+    <span><img src="./assets/devglan.png"></span>
+    <h2 color="primary" class="mat-h2 mat-title m-auto">RXJS</h2>
+  </mat-toolbar-row>
+</mat-toolbar>
+<mat-sidenav-container class="sidenav-container">
+  <mat-sidenav #drawer mode="side" opened [fixedInViewport]="false" [fixedTopGap]="60"
+    [fixedBottomGap]="60" class="sidenav">
+    <app-sidenav></app-sidenav>
+  </mat-sidenav>
+  <mat-sidenav-content class="sidenav-content">
+    <div class="container m-5">
+      <router-outlet></router-outlet>
+    </div>
+  </mat-sidenav-content>
+</mat-sidenav-container>

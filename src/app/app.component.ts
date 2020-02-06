@@ -1,12 +1,13 @@
-import { Component } from '@angular/core';
-
+import { Component, ViewChild } from '@angular/core';
+import { SidenavComponent } from './sidenav/sidenav.component';
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
-  styleUrls: ['./app.component.css']
+  styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
 
-  constructor() { }
+  @ViewChild(SidenavComponent, { static: false }) sidenav: any;
 
+  constructor() { }
 }
