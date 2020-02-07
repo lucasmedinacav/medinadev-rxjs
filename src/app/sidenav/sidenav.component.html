@@ -1,11 +1,15 @@
+<mat-accordion>
   <mat-nav-list class="navigation-list">
-    <a class="navigation-item" mat-list-item routerLink="/map" routerLinkActive="active">Map</a>
-    <a class="navigation-item" mat-list-item routerLink="/filter" routerLinkActive="active">Filter</a>
-    <a class="navigation-item" mat-list-item routerLink="/filter">Merge Map</a>
-    <a class="navigation-item" mat-list-item routerLink="/filter">Concat</a>
-    <a class="navigation-item" mat-list-item routerLink="/filter">Subject</a>
-    <a class="navigation-item" mat-list-item routerLink="/filter">Observables</a>
-    <a class="navigation-item" mat-list-item routerLink="/filter">Replay</a>
-    <a class="navigation-item" mat-list-item routerLink="/filter">AuditTime</a>
-    <a class="navigation-item" mat-list-item routerLink="/filter">DebounceTime</a>
+    <mat-expansion-panel *ngFor="let grupo of gruposMenu">
+      <mat-expansion-panel-header>
+        <mat-panel-title>
+          {{grupo.nome}}
+        </mat-panel-title>
+      </mat-expansion-panel-header>
+      <a class="navigation-item" mat-list-item routerLinkActive="active" [routerLink]="grupo.host+menu.host"
+        *ngFor="let menu of grupo.itensMenu">
+        {{menu.nome}}
+      </a>
+    </mat-expansion-panel>
   </mat-nav-list>
+</mat-accordion>

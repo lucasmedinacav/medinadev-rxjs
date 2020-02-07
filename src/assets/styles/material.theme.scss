@@ -1,7 +1,9 @@
 @import "./material-variables.theme";
 @import "node_modules/@angular/material/theming";
 @import "./material-typography.theme";
+//CUSTOMIZACAO COMPONENTES DO MATERIAL
 @import "./material/mat-sidenav";
+@import "./material/mat-expansion-panel.scss";
 
 @include mat-core($typography);
 

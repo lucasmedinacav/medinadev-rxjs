@@ -20,21 +20,20 @@
     color: #ce93d8;
 
   }
+  }
 
-}
+  .mat-drawer-inner-container {
+    background-color: rgb(58, 58, 58);
+  }
 
-.mat-drawer-inner-container {
-  background-color: rgb(58, 58, 58);
-}
+  .sidenav {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 250px;
+  }
 
-.sidenav {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  width: 200px;
-}
-
-.navigation-list,
-.mat-list-base {
-  padding-top: 0px !important;
-}
+  .navigation-list,
+  .mat-list-base {
+    padding-top: 0px !important;
+  }

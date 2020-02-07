@@ -1,27 +1,25 @@
 import { CommonModule } from '@angular/common';
 import { NgModule } from '@angular/core';
-import { MatButtonModule, MatIconModule, MatListModule, MatNativeDateModule, MatSidenavModule, MatToolbarModule } from '@angular/material';
+import { MatButtonModule, MatExpansionModule, MatIconModule, MatListModule,
+  MatNativeDateModule, MatSidenavModule, MatToolbarModule } from '@angular/material';
 import { BrowserModule } from '@angular/platform-browser';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { RouterModule, Routes } from '@angular/router';
 import { AppComponent } from './app.component';
-import { FilterComponent } from './filter/filter.component';
-import { MapComponent } from './map/map.component';
 import { SidenavComponent } from './sidenav/sidenav.component';
 
 
-// import { MatToolbarModule } from '@angular/material/toolbar';
 const appRoutes: Routes = [
-  { path: '', component: MapComponent },
-  { path: 'map', component: MapComponent },
-  { path: 'filter', component: FilterComponent }
+  { path: '', loadChildren: './creation-operators/creation-operators.module#CreationOperatorsModule'},
+  {
+    path: 'creation-operators',
+    loadChildren: './creation-operators/creation-operators.module#CreationOperatorsModule'
+  }
 ];
 @NgModule({
   declarations: [
     AppComponent,
     SidenavComponent,
-    MapComponent,
-    FilterComponent
   ],
   imports: [
     BrowserModule,
@@ -33,6 +31,7 @@ const appRoutes: Routes = [
     MatIconModule,
     MatSidenavModule,
     MatListModule,
+    MatExpansionModule,
     RouterModule.forRoot(appRoutes)],
   exports: [
     CommonModule,
